@@ -2,11 +2,6 @@ const mysql = require("mysql");
 
 require("dotenv").config();
 const con = mysql.createConnection({
-  // host: "silver-kitchen.cwp5ifjbmqhz.us-east-2.rds.amazonaws.com",
-  // user: "admin",
-  // password: "Qshsfu111",
-  // database: "kitchen_test",
-  // port: "3306",
   host: process.env.DB_HOST,
   user: "admin",
   password: process.env.DB_PASSWORD,
