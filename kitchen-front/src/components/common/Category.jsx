@@ -53,7 +53,7 @@ export default function Category(props) {
   const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
-    setProducts(getFoodList(props.name));
+    getFoodList(props.name).then((data) => setProducts(data));
   }, [props.name]);
 
   // when the add button is clicked for the category, I should add the new product to the
@@ -76,13 +76,14 @@ export default function Category(props) {
 
       <div className="row flex-nowrap overflow-auto ">
         {products.map((p) => {
-          var order = props.cart.find((item) => item.name === p);
+          const { name } = p;
+          var order = props.cart.find((item) => item.name === name);
 
           return (
-            <div className="col mb-4" key={p}>
+            <div className="col mb-4" key={name}>
               {/* find out the order count for the current product */}
               <Product
-                name={p}
+                name={name}
                 cart={props.cart}
                 addToCart={props.addToCart}
                 deleteFromCart={props.deleteFromCart}

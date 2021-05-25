@@ -14,7 +14,7 @@ export default function Menu(props) {
         addToCart={props.addToCart}
         deleteFromCart={props.deleteFromCart}
       />
-      {/* <Category
+      <Category
         name="vege"
         cart={props.cart}
         addToCart={props.addToCart}
@@ -31,7 +31,7 @@ export default function Menu(props) {
         cart={props.cart}
         addToCart={props.addToCart}
         deleteFromCart={props.deleteFromCart}
-      /> */}
+      />
     </div>
   );
 }
